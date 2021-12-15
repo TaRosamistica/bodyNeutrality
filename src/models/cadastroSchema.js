@@ -1,12 +1,14 @@
 const mongoose = require("mongoose");
 
-const usersSchema = new mongoose.Schema({
-    name: {
+const cadastroSchema = new mongoose.Schema({
+    id: mongoose.Schema.Types.ObjectId,
+    nome:{
         type: String,
         required: true
     },
     categoria:{
         type: String,
+        required: true
     },
     registro: {
         type: String,
@@ -25,18 +27,22 @@ const usersSchema = new mongoose.Schema({
         required: true
     },
     telefone: {
-        type: Number,
+        type: String,
         required: true
     },
     email: {
         type: String,
         required: true, 
-        unique: true
+        unique: true,
+        lowercase: true
+    },
+    atendimentoOnline:{
+        type: Boolean,
+        required: true
     },
     atendimentoSocial:{
-        type: String,
+        type: Boolean,
         required: true
-        
     },
     criadoEm: {
         type: Date,
@@ -45,6 +51,4 @@ const usersSchema = new mongoose.Schema({
     }
 })
 
-const Users = mongoose.model("User", usersSchema)
-
-module.exports = Users
+module.exports = mongoose.model("cadastro", cadastroSchema)
