@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/all", controller.getAll);
 router.get("/:id", controller.getById)
 router.post("/create", controller.createCadastro);
-router.put("/update/:id", controller.updateCadastroById)
+router.put("/update/:id", controller.updateCadastro)
 router.delete("/delete/:id", controller.deleteCasdastro)
 
 

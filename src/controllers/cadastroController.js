@@ -40,25 +40,11 @@ const getById = async (req, res) => {
 //Post
 const createCadastro = async (req, res) => {
     try{
-    const newCadastro = new CadastroSchema({
-        nome: req.body.nome,
-        categoria: req.body.categoria,
-        registro: req.body.registro,
-        especialidade: req.body.especialidade,
-        estado: req.body.estado,
-        cidade: req.body.cidade,
-        telefone: req.body.telefone,
-        email: req.body.email,
-        atendimentoOnline: req.body.atendimentoOnline,
-        atendimentoSocial: req.body.atendimentoSocial,
-        _id: new mongoose.Types.ObjectId()
- 
-        })
- 
-        const savedCadastro = await newCadastro.save()
+    const criarCadastro = await CadastroSchema.create(req.body);
+    
         res.status(200).json({
             message: "Cadastro realizado com Sucesso!",
-            savedCadastro
+            criarCadastro
         })
     } catch (error){
         res.status(500).json({
@@ -70,7 +56,7 @@ const createCadastro = async (req, res) => {
 
 
 //put 
-const updateCadastroById = async (req, res) => {
+const updateCadastro = async (req, res) => {
     try {
         const findCadastro =  await CadastroSchema.findById(req.params.id)
 
@@ -128,7 +114,7 @@ module.exports = {
     getAll, 
     getById,
     createCadastro,
-    updateCadastroById,
+    updateCadastro,
     deleteCasdastro
     
 }
