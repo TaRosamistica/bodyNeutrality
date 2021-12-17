@@ -1,7 +1,7 @@
 const CadastroSchema = require("../models/cadastroSchema");
 const mongoose = require("mongoose");
 
-//get All -  depois implementar filtros no get all 
+//GetAll 
 
 const getAll = async (req, res) =>{
    try {
@@ -18,7 +18,7 @@ const getAll = async (req, res) =>{
     
 }
 
-//getById 
+//GetById 
 const getById = async (req, res) => {
     try {
         const { id } = req.params
@@ -87,6 +87,7 @@ const updateCadastro = async (req, res) => {
     }
 }
 
+//Delete
 const deleteCasdastro = async (req, res) => {
     try {
 
