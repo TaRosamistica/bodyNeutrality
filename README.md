@@ -189,6 +189,8 @@ Utilize o **Postman**  para chamar e testar os endpoints da API localmente
         }
 ```
 
+ ![](assets/gif.gif)
+
 ## 🚧 Implementações Futuras
 
 - Criação de novas rotas organizando os profissionais cadastrados por especialidade;
